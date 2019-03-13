@@ -1,12 +1,374 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>wid-A4 Template</title>
-<link rel="stylesheet" type="text/css" href="Windsor.css">
+	<title>wid-A4 Template</title>
+	<link rel="stylesheet" type="text/css" href="Windsor.css">
+	<style type="text/css">
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		/* Globals */
+		.a4-container{	
+			width:2480px;
+			height: auto;
+			min-height:3508px;
+			background: #FFFFFF;
+			position: relative;
+			overflow:hidden;
+		}
+
+		.watermark:before {
+			position: absolute;
+			content: "";
+			width: 2480px;
+			height: 3508px;
+			background: url(assets/png/watermark.png) center center no-repeat;
+			background-size: contain;
+			transform: rotate(45deg);
+		}
+
+		.grid-1-3{
+			width:33.333%;
+			height:auto;
+			float:left;
+			position: relative;
+			white-space: normal;
+		}
+		.grid-2-3{
+			width:66.666%;
+			height:100%;
+			float:left;
+			position: relative;
+		}
+		.grid-40{
+			width:40%;
+			height:3508px;
+			float:left;
+			position: relative;
+			white-space: normal;
+		}
+		.grid-60{
+			width:60%;
+			height:auto;
+			float:left;
+			position: relative;
+		}
+		.grid-full{
+			width:100%;
+			height:auto;
+			float: left;
+			position: relative;
+		}
+		.grid-content{
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:60px;
+		}
+		.txt-left{
+			text-align: left;
+		}
+		.txt-right{
+			text-align: right;
+		}
+		.txt-center{
+			text-align: center;
+		}
+		.bold{
+			font-weight: bold;
+		}
+		.regular{
+			font-weight: normal;
+		}
+		.italic{
+			font-style:italic;
+		}
+
+
+		/* FONT */
+
+		@font-face {
+		    font-family: 'open_sansregular';
+		    src: url('fonts/Open-Sans/opensans-regular-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans/opensans-regular-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansbold';
+		    src: url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+
+
+
+		/* Windsor */
+		.a4-wid-control{	
+			width:2360px;
+			min-height:3508px;
+			height:auto;
+			float:left;
+			padding:30px 60px 120px 60px;
+		}
+		.color1-wid{
+			background-color: #809ec2!important;
+		}
+		.color2-wid{
+			background-color: #f3a447!important;
+		}
+		.color3-wid{
+			background-color: #a5b592!important;
+		}
+		.color4-wid{
+			background-color: #d092a7!important;
+		}
+		.color5-wid{
+			background-color: #595959!important;
+		}
+		.wid-1-3{
+			width:660px;
+			padding:40px 60px 0px 60px;
+			display: table-cell;
+			vertical-align: top;
+		}
+		.wid-2-3{
+			width:1332px;
+			display: table-cell;
+			padding:40px 60px 0px 60px;
+		}
+		.wid-full{
+			width:auto;
+			height:100%;
+			float:left;
+			position: relative;
+			padding:40px 60px 0px 60px;
+		}
+		.wid-borders{
+			border-left: 8px solid #595959;
+			border-right: 8px solid #595959;
+		}
+		.header-wid{
+			position: relative;
+			width:2344px;
+			height:auto;
+			min-height:200px;
+			float:left;
+			border:8px solid #595959;
+			text-align: center;
+			text-transform: uppercase;
+			padding:60px 0px 60px 0px;
+			margin-bottom:100px;
+		}
+		.header-wid-text{
+			width:2240px;
+			height:auto;
+			margin:0px auto 0px auto;
+			padding:30px 0px 30px 0px;
+		}
+		.header-wid h1{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			color:#404040;
+			font-size: 140px;
+			padding-bottom:60px;
+		}
+		.header-wid h4{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			width:1800px;
+			max-width:1800px;
+			position:absolute;
+			font-weight:bold;
+			color:#FFFFFF;
+			font-size:42px;
+			background:#8acecf;
+			letter-spacing: 0.35em;
+			bottom:0;
+			left:0;
+			right:0;
+			padding:40px 10px;
+			line-height:1.275em;
+			margin:0px auto -80px auto;
+		}
+		.wid-1-3 ul{
+			width:100%;
+			float:left;
+			height:auto;
+		}
+		.wid-1-3 ul li{
+			display: block;
+			position: relative;
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-size: 42px;
+			width:666px;
+			height:auto;
+			float:left;
+			margin:0 0px 10px 0px;
+			line-height: 1.4em;
+			white-space: normal;
+		}
+		.wid-icon{
+			width:48px;
+			height:48px;
+			float:left;
+			left: -40px;
+			position: absolute;
+		}
+		.wid-icon img{
+			width:48px;
+			height:48px;
+		}
+		.wid-1-3 ul li p{
+			width:auto;
+			height:auto;
+			line-height: 1.53em;
+			float: left;
+			padding-left:60px;
+		}
+		.wid-title{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight: bold;
+			text-align: center;
+			font-size:68px;
+			width:auto;
+			max-width:666px;
+			height:auto;
+			margin:0px auto;
+			position:relative;
+			letter-spacing: 0.05em;
+			margin-bottom:30px;
+			padding-bottom:30px;
+		}
+
+		.wid-title2{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-size:68px;
+			width:100%;
+			height:auto;
+			float:left;
+			position:relative;
+			color:#FFFFFF;
+			letter-spacing: 0.05em;
+			margin-bottom:30px;
+			padding:10px 10px 10px 10px;
+			background: #8acecf;
+			line-height:1.275em;
+		}
+
+		.wid-title3{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight: bold;
+			text-align: center;
+			font-size:68px;
+			float:left;
+			width:100%;
+			height:auto;
+			margin:60px auto 0px auto;
+			position:relative;
+			letter-spacing: 0.05em;
+			margin-bottom:0px;
+			padding-bottom:30px;
+		}
+		.wid-title4{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight: bold;
+			font-size:42px;
+			width:auto;
+			max-width:666px;
+			height:auto;
+			margin:0px auto;
+			position:relative;
+			letter-spacing: 0.05em;
+			margin-bottom:30px;
+			padding-bottom:30px;
+		}
+
+		.wid-title-element{
+			position: absolute;
+			left:0;
+			bottom:0;
+			background-color: #8acecf;
+			height:8px;
+			width:100%;
+		}
+		.wid-sub-title{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:15px;
+			position:relative;
+			letter-spacing: 0.1em;
+		}
+
+		.wid-altsub-title{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight: normal;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:20px;
+			position:relative;
+			font-style: italic;
+		}
+
+		.wid-para{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:50px;
+			position:relative;
+			line-height: 1.25em;
+		}
+		.wid-para ul{
+			list-style-type:disc;
+			list-style-position:inside;
+			padding-left: 1.375em;
+			text-indent: -1.375em;
+		}
+		.wid-para ul li{
+			padding-left: 60px;
+		}
+	</style>
 </head>
 
 <body>
 	<div class="a4-container">
+		<div class="watermark" />
 		<div class="a4-wid-control">
 			<div class="header-wid">
 				<div class="header-wid-text">

@@ -1,12 +1,310 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>2019-A4 Template</title>
-<link rel="stylesheet" type="text/css" href="Clean.css">
+	<title>2019-A4 Template</title>
+	<link rel="stylesheet" type="text/css" href="Clean.css">
+	<style type="text/css">
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		/* Globals */
+		.a4-container{	
+			width:2480px;
+			height: auto;
+			min-height:3508px;
+			background: #FFFFFF;
+			position: relative;
+			overflow:hidden;
+			display: table;
+		}
+
+		.watermark:before {
+			position: absolute;
+			content: "";
+			width: 2480px;
+			height: 3508px;
+			background: url(assets/png/watermark.png) center center no-repeat;
+			background-size: contain;
+			transform: rotate(45deg);
+		}
+
+		.grid-40{
+			width:960px;
+			max-width: 960px;
+			vertical-align: top;
+			display: table-cell;
+		}
+		.grid-60{
+			width:1520px;
+			max-width:1520px;
+			display: table-cell;
+		}
+
+		.grid-full{
+			width:100%;
+			height:auto;
+			float: left;
+			position: relative;
+		}
+		.grid-content{
+			width:100%;
+			height:auto;
+			float:left;
+		}
+		.txt-left{
+			text-align: left;
+		}
+		.txt-right{
+			text-align: right;
+		}
+		.txt-center{
+			text-align: center;
+		}
+		.bold{
+			font-weight: bold;
+		}
+		.regular{
+			font-weight: normal;
+		}
+		.italic{
+			font-style:italic;
+		}
+
+
+		/* FONT */
+
+		@font-face {
+		    font-family: 'open_sansregular';
+		    src: url('fonts/Open-Sans/opensans-regular-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans/opensans-regular-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansbold';
+		    src: url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansextrabold';
+		    src: url('fonts/Open-Sans-Extra/opensans-extrabold-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans-Extra/opensans-extrabold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+
+		/* Clean */
+
+		.color1-cle{
+			background-color: #fcb11c!important;
+		}
+		.color2-cle{
+			background-color: #c0504d!important;
+		}
+		.color3-cle{
+			background-color: #9e5e9b!important;
+		}
+		.color4-cle{
+			background-color: #6892a0!important;
+		}
+		.color5-cle{
+			background-color: #5b9bd5!important;
+		}
+		.header-cle{
+			position: relative;
+			width:100%;
+			height:auto;
+			padding:60px 120px 60px 120px;
+			min-height:100px;
+			float:left;
+			margin-bottom:0px;
+			text-align: left;
+			border-bottom:8px solid #FFFFFF;
+		}
+		.header-cle-text{
+			width:100%;
+			height:auto;
+			margin:0px auto 0px auto;
+			padding:30px;
+		}
+		.header-cle h1{
+			font-family: 'open_sansextrabold', Helvetica, sans-serif;
+			color:#000;
+			font-size: 72px;
+			padding-bottom:40px;
+			letter-spacing: 0.025em;
+			margin-left:-10px;
+		}
+		.header-cle h4{
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			color:#000;
+			font-size:54px;
+			padding-bottom:0px;
+			letter-spacing: 0.025em;
+		}
+		.l-cle{
+			width:748px;
+			height:auto;
+			border-bottom:8px solid #FFFFFF;
+			float:left;
+			padding:60px 90px 60px 120px;
+		}
+		.r-cle{
+			width:1310px;
+			height:auto;
+			border-bottom:8px solid #FFFFFF;
+			float:left;
+			padding:120px 120px 0px 90px;
+		}
+		.l-cle.last{
+			border-bottom:0px solid #FFFFFF;
+		}
+		.l-cle ul li{
+			position: relative;
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-size: 42px;
+			width:100%;
+			height:auto;
+			min-height: 72px;
+			float:left;
+		}
+		.cle-icon{
+			width:64px;
+			height:64px;
+			float:left;
+			position:absolute;
+			left: 0px;
+		}
+		.cle-icon img{
+			width:64px;
+			height:64px;
+		}
+		.l-cle ul li p{
+			width:auto;
+			height:auto;
+			min-height: 72px;
+			line-height: 1.53em;
+			float: left;
+			padding-left:90px;
+		}
+		.r-cle .cle-title{
+			border-bottom:8px solid #e0e0e0;
+			}
+		.cle-title{
+			font-family: 'open_sansbold', Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:54px;
+			width:100%;
+			height:auto;
+			float:left;
+			position:relative;
+			letter-spacing: 0.05em;
+			margin-bottom:30px;
+			padding-bottom:30px;
+		}
+
+		.cle-sub-title{
+			font-family: 'open_sansbold', Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:15px;
+			position:relative;
+			letter-spacing: 0.05em;
+		}
+		.cle-altsub-title{
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-weight: normal;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:30px;
+			position:relative;
+			font-style: italic;
+		}
+		.cle-para{
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:60px;
+			position:relative;
+			line-height: 1.25em;
+		}
+		.cle-para ul{
+			list-style-type:disc;
+			list-style-position:inside;
+			padding-left: 1.375em;
+			text-indent: -1.375em;
+		}
+		.cle-para ul li{
+			padding-left: 1.375em;
+			line-height: 1.5em;
+		}
+		.cle-skills{
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:60px;
+		}
+		.cle-skills ul li{
+			width:auto;
+			height:auto;
+			padding:20px;
+			background: #e0e0e0;
+			float:left;
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-size:42px;
+			margin:0px 30px 30px 0px;
+		}
+		.cle-education{
+			width:50%;
+			height:auto;
+			float:left;
+		}
+	</style>
 </head>
 
 <body>
 	<div class="a4-container">
+		<div class="watermark" />
 		<div class="grid-40 color5-cle">
 			<div class="header-cle">
 				<div class="header-cle-text">

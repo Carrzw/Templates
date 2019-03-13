@@ -1,12 +1,311 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>cor-A4 Template</title>
-<link rel="stylesheet" type="text/css" href="Corporate.css">
-</head>
+	<title>cor-A4 Template</title>
+	<link rel="stylesheet" type="text/css" href="Corporate.css">
+	<style type="text/css">
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		/* Globals */
+		.a4-container{	
+			width:2480px;
+			height: auto;
+			min-height:3508px;
+			background: #FFFFFF;
+			position: relative;
+			overflow:hidden;
+		}
 
+		.watermark:before {
+			position: absolute;
+			content: "";
+			width: 2480px;
+			height: 3508px;
+			background: url(assets/png/watermark.png) center center no-repeat;
+			background-size: contain;
+			transform: rotate(45deg);
+			z-index: 2;
+		}
+
+		.cor-content-container{
+			width: 100%;
+			height:auto;
+			float:left;
+			position:relative;
+		}
+		.grid-1-3{
+			width:868px;
+			vertical-align: top;
+			display: table-cell;
+		}
+		.grid-2-3{
+			width:1580px;
+			display: table-cell;
+		}
+		.grid-content{
+			width:100%;
+			height:auto;
+			float:left;
+		}
+		.txt-left{
+			text-align: left;
+		}
+		.txt-right{
+			text-align: right;
+		}
+		.txt-center{
+			text-align: center;
+		}
+		.bold{
+			font-weight: bold;
+		}
+		.regular{
+			font-weight: normal;
+		}
+		.italic{
+			font-style:italic;
+		}
+
+
+		/* FONT */
+
+		@font-face {
+		    font-family: 'open_sansregular';
+		    src: url('fonts/Open-Sans/opensans-regular-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans/opensans-regular-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansbold';
+		    src: url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansextrabold';
+		    src: url('fonts/Open-Sans-Extra/opensans-extrabold-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans-Extra/opensans-extrabold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+
+
+		/* Corporate */
+		.color1-cor{
+			background-color: #000000!important;
+		}
+		.color2-cor{
+			background-color: #715d8d!important;
+		}
+		.color3-cor{
+			background-color: #676979!important;
+		}
+		.color4-cor{
+			background-color: #6c8f5d!important;
+		}
+		.color5-cor{
+			background-color: #6b88bc!important;
+		}
+		.cor-1-3-color{
+			background:#f5f6f5;
+		}
+		.header-cor{
+			position: relative;
+			width:2480px;
+			height:auto;
+			min-height:200px;
+			float:left;
+			background:#353f58;
+			text-align: center;
+			text-transform: uppercase;
+			padding:100px 0px 100px 0px;
+		}
+		.header-cor-text{
+			width:2240px;
+			height:auto;
+			margin:0px auto 0px auto;
+			padding:30px 120px 30px 120px;
+		}
+		.header-cor h1{
+			font-family: "open_sansextrabold", Helvetica, sans-serif;
+			color:#FFFFFF;
+			font-size: 92px;
+			padding-bottom:60px;
+			letter-spacing: 0.4em;
+		}
+		.cor-header-element{
+			width:140px;
+			height:8px;
+			margin:0px auto;
+			background: #FFFFFF;
+		}
+		.header-cor h4{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight:bold;
+			color:#FFFFFF;
+			font-size:64px;
+			padding-top:60px;
+			letter-spacing: 0.125em;
+		}
+		.r-cor{
+			width:620px;
+			height:auto;
+			float:left;
+			padding:40px 120px 0px 90px;
+			margin-bottom:40px;
+		}
+		.r-cor-first{
+			padding:120px 120px 0px 90px;
+			margin-bottom:40px;
+		}
+		.l-cor{
+			width:1402px;
+			height:auto;
+			float:left;
+			padding:40px 90px 0px 120px;
+			margin-bottom:0px;
+		}
+		.l-cor-first{
+			padding:120px 90px 0px 120px;
+			margin-bottom:0px;
+		}
+		.r-cor ul li{
+			position: relative;
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-size: 42px;
+			width:auto;
+			height:auto;
+			float:left;
+			margin:0 0px 5px 0px;
+			line-height: 1.4em;
+		}
+		.cor-icon{
+			width:64px;
+			height:64px;
+			float:left;
+			left: 0px;
+			position: absolute;
+		}
+		.cor-icon img{
+			width:64px;
+			height:64px;
+		}
+		.r-cor ul li p{
+			width:auto;
+			height:auto;
+			font-size: 42px;
+			line-height: 1.725em;
+			float: left;
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			text-align: left;
+			padding-left:90px;
+		}
+		.cor-title{
+			font-family: "open_sansbold", Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:54px;
+			width:100%;
+			height:auto;
+			float:left;
+			position:relative;
+			letter-spacing: 0.125em;
+			margin-bottom:30px;
+			padding-bottom:30px;
+		}
+		.cor-title-element{
+			position: absolute;
+			left:0;
+			bottom:0;
+			background-color: #e0e0e0;
+			height:8px;
+			width:140px;
+		}
+		.cor-sub-title{
+			font-family: "open_sansbold", Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:15px;
+			position:relative;
+			letter-spacing: 0.1em;
+		}
+		.cor-sub-title span{
+			float:left;
+			width:auto;
+			height:auto;
+		}
+		.cor-altsub-title{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight: normal;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:20px;
+			position:relative;
+			font-style: italic;
+		}
+
+		.cor-para{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:50px;
+			position:relative;
+			line-height: 1.25em;
+		}
+		.cor-para ul{
+			list-style-type:disc;
+			list-style-position:inside;
+			padding-left: 1.375em;
+			text-indent: -1.375em;
+		}
+		.cor-para ul li{
+			padding-left: 60px;
+		}
+	</style>
+</head>
 <body>
 	<div class="a4-container">
+		<div class="watermark" />
 		<div class="a4cor-control">
 			<div class="header-cor color5-cor">
 				<div class="header-cor-text">

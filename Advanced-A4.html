@@ -1,9 +1,309 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>2019-A4 Template</title>
-	<link rel="stylesheet" type="text/css" href="Advanced.css">
-	<style type="text/css">
+	<title>Advanced-A4 Template</title>
+	<style type="text/css" media="screen">
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		/* Globals */
+		.a4-container{	
+			width: 2480px;
+			min-height: 3508px;
+			background: #FFFFFF;
+			position: relative;
+			overflow: hidden;
+			column-width: 2480px;
+			height: 3508px;
+		}
+
+		.watermark:before {
+			position: absolute;
+			content: "";
+			width: 2480px;
+			height: 3508px;
+			background: url(assets/png/watermark.png) center center no-repeat;
+			background-size: contain;
+			transform: rotate(45deg);
+		}
+		.grid-full{
+			width:100%;
+			height:auto;
+			float: left;
+			position: relative;
+		}
+		.grid-content{
+			width:100%;
+			height:auto;
+			float:left;
+		}
+		.txt-left{
+			text-align: left;
+		}
+		.txt-right{
+			text-align: right;
+		}
+		.txt-center{
+			text-align: center;
+		}
+		.bold{
+			font-weight: bold;
+		}
+		.regular{
+			font-weight: normal;
+		}
+		.italic{
+			font-style:italic;
+		}
+
+
+		/* FONT */
+		@font-face {
+		    font-family: 'robotoregular';
+		    src: url('fonts/Roboto/roboto-regular-webfont.woff2') format('woff2'),
+		         url('fonts/Roboto/roboto-regular-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'robotobold';
+		    src: url('fonts/Roboto-Bold/roboto-bold-webfont.woff2') format('woff2'),
+		         url('fonts/Roboto-Bold/roboto-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansregular';
+		    src: url('fonts/Open-Sans/opensans-regular-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans/opensans-regular-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansbold';
+		    src: url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+
+		/* Advanced */
+
+		.color1-adv{
+			background-color: #c2d6b4!important;
+		}
+		.color2-adv{
+			background-color: #91caf5!important;
+		}
+		.color3-adv{
+			background-color: #93b0f5!important;
+		}
+		.color4-adv{
+			background-color: #c18081!important;
+		}
+		.color5-adv{
+			background-color: #f5a477!important;
+		}
+		.header-adv{
+			position: relative;
+			width:2360px;
+			height:auto;
+			padding:60px 60px 60px 60px;
+			min-height:100px;
+			float:left;
+			margin-bottom:0px;
+			text-align: left;
+		}
+		.header-adv-text{
+			width:100%;
+			height:auto;
+			margin:0px auto 0px auto;
+			padding:30px;
+		}
+		.header-adv h1{
+			font-family: 'robotoregular', Helvetica, sans-serif;
+			color:#000;
+			font-size: 132px;
+			padding-bottom:40px;
+			letter-spacing: 3.3px;
+			/*letter-spacing: 0.025em;*/
+		}
+		.header-adv h4{
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			color:#000;
+			font-size:54px;
+			padding-bottom:0px;
+			letter-spacing: 1.35px;
+			/*letter-spacing: 0.025em;*/
+		}
+		.contact-adv{
+			width:2240px;
+			height:auto;
+			background: #f5f6f5;
+			padding:20px 120px 20px 120px;
+			float: left;
+		}
+		.contact-adv ul li{
+			width:auto;
+			height:72px;
+			float:left;
+			margin:0 40px 10px 0px;
+		}
+		.adv-icon{
+			width:72px;
+			height:72px;
+			float:left;
+			margin:0 30px 0px 0px;
+		}
+		.contact-adv ul li p{
+			width:auto;
+			height:auto;
+			min-height: 72px;
+			font-size: 42px;
+			line-height: 72.45px;
+			/*line-height: 1.725em;*/
+			float: left;
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+		}
+		.adv-content{
+			width:100%;
+			height:auto;
+			float:left;
+			width:2240px;
+			padding:120px 120px 60px 120px;
+		}
+		.adv-title{
+			font-family: 'robotobold', Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:54px;
+			width:100%;
+			height:auto;
+			float:left;
+			position:relative;
+			letter-spacing: 6.75px;
+			/*letter-spacing: 0.125em;*/
+			margin-bottom:30px;
+			padding-bottom:30px;
+		}
+		.adv-title-element{
+			position: absolute;
+			left:0;
+			bottom:0;
+			background-color: #e0e0e0;
+			height:8px;
+			width:140px;
+		}
+		.adv-sub-title{
+			font-family: 'open_sansbold', Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:15px;
+			position:relative;
+			letter-spacing: 2.1px;
+			/*letter-spacing: 0.05em;*/
+		}
+		.adv-altsub-title{
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-weight: normal;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:30px;
+			position:relative;
+			font-style: italic;
+		}
+		.adv-para{
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:60px;
+			position:relative;
+			line-height: 52.5px;
+			/*line-height: 1.25em;*/
+		}
+		.adv-para ul{
+			list-style-type:disc;
+			list-style-position:inside;
+			padding-left: 22px;
+			text-indent: -22px;
+/*			padding-left: 1.375em;
+			text-indent: -1.375em;*/
+		}
+		.adv-para ul li{
+			padding-left: 57.75px;
+			/*padding-left: 1.375em;*/
+			line-height: 63px;
+			/*line-height: 1.5em;*/
+		}
+		.adv-skills{
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:60px;
+		}
+		.adv-skills ul li{
+			width:auto;
+			height:auto;
+			padding:20px;
+			background: #e0e0e0;
+			float:left;
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-size:42px;
+			margin:0px 30px 30px 0px;
+		}
+		.adv-education{
+			width:50%;
+			height:auto;
+			float:left;
+		}
+		.adv-education .adv-altsub-title{
+			font-family: 'open_sansregular', Helvetica, sans-serif;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:10px;
+			position:relative;
+			font-style: italic;
+		}
+	</style>
+	<style type="text/css" media="print">
 		html, body, div, span, applet, object, iframe,
 		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 		a, abbr, acronym, address, big, cite, code,
@@ -53,33 +353,6 @@
 			background: url(assets/png/watermark.png) center center no-repeat;
 			background-size: contain;
 			transform: rotate(45deg);
-		}
-
-		.grid-1-3{
-			width:33.333%;
-			height:auto;
-			float:left;
-			position: relative;
-			white-space: normal;
-		}
-		.grid-2-3{
-			width:66.666%;
-			height:100%;
-			float:left;
-			position: relative;
-		}
-		.grid-40{
-			width:40%;
-			height:3508px;
-			float:left;
-			position: relative;
-			white-space: normal;
-		}
-		.grid-60{
-			width:60%;
-			height:auto;
-			float:left;
-			position: relative;
 		}
 		.grid-full{
 			width:100%;

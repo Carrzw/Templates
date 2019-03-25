@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>Majestic-A4 Template</title>
-	<link rel="stylesheet" type="text/css" href="Majectic.css">
-	<style type="text/css">
+	<style type="text/css" media="screen" >
 		html, body, div, span, applet, object, iframe,
 		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 		a, abbr, acronym, address, big, cite, code,
@@ -56,24 +55,30 @@
 			transform: rotate(45deg);
 		}
 
+		.grid-1-3-wrapper{
+			display:table-cell;
+		}
+
 		.grid-1-3{
 			width:868px;
 			vertical-align: top;
-			display: table-cell;
 			border-left:8px solid #f5f6f5;
+			height:2690px;
+			column-width:868px;
+			overflow:hidden;
 		}
+
+		.grid-2-3-wrapper{
+			display:table-cell;
+		}
+
 		.grid-2-3{
-			width:1580px;
-			display: table-cell;
-
+			height:2690px;
+			width: 1612px;
+			column-width:1612px;
+			overflow:hidden;
 		}
 
-		.grid-full{
-			width:100%;
-			height:auto;
-			float: left;
-			position: relative;
-		}
 		.grid-content{
 			width:100%;
 			height:auto;
@@ -275,6 +280,284 @@
 		.maj-para ul li{
 			padding-left: 60px;
 		}
+		
+	</style>
+	<style type="text/css" media="print" >
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		/* Globals */
+		.a4-container{	
+			width:2480px;
+			height: auto;
+			min-height:3508px;
+			background: #FFFFFF;
+			position: relative;
+			overflow:hidden;
+			display: table;
+		}
+
+		.watermark:before {
+			position: absolute;
+			content: "";
+			width: 2480px;
+			height: 3508px;
+			background: url(assets/png/watermark.png) center center no-repeat;
+			background-size: contain;
+			transform: rotate(45deg);
+		}
+
+		.grid-1-3-wrapper{
+			display: table-cell;
+			vertical-align: top;
+		}
+
+		.grid-1-3{
+			width:868px;
+			border-left:8px solid #f5f6f5;
+			display:table-cell;
+		}
+
+		.grid-2-3-wrapper{
+			display:table-cell;
+			vertical-align: top;
+		}
+
+		.grid-2-3{
+			width:1612px;
+			display:table-cell;
+		}
+
+		.grid-content{
+			width:100%;
+			height:auto;
+			float:left;
+		}
+		.txt-left{
+			text-align: left;
+		}
+		.txt-right{
+			text-align: right;
+		}
+		.txt-center{
+			text-align: center;
+		}
+		.bold{
+			font-weight: bold;
+		}
+		.regular{
+			font-weight: normal;
+		}
+		.italic{
+			font-style:italic;
+		}
+
+
+		/* FONT */
+
+		@font-face {
+		    font-family: 'bebas_neuebold';
+		    src: url('fonts/Bebas/bebasneue-bold-webfont.woff2') format('woff2'),
+		         url('fonts/Bebas/bebasneue-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+		@font-face {
+		    font-family: 'open_sansregular';
+		    src: url('fonts/Open-Sans/opensans-regular-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans/opensans-regular-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'open_sansbold';
+		    src: url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff2') format('woff2'),
+		         url('fonts/Open-Sans-Bold/opensans-bold-webfont.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+
+
+
+		/* Majectic */
+		.header-maj{
+			position: relative;
+			width:2480px;
+			height:auto;
+			min-height:100px;
+			float:left;
+			text-align: center;
+			text-transform: uppercase;
+			padding:100px 0px 100px 0px;
+			background-position: center center;
+		}
+		.header-maj-text{
+			width:2240px;
+			height:auto;
+			margin:0px auto 0px auto;
+			padding:30px 120px 30px 120px;
+		}
+		.header-maj h1{
+			font-family: "bebas_neuebold", Helvetica, sans-serif;
+			color:#FFFFFF;
+			font-size: 120px;
+			padding-bottom:0px;
+			letter-spacing: 48px;
+			/*letter-spacing: 0.4em;*/
+		}
+		.header-maj h4{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight:bold;
+			color:#FFFFFF;
+			font-size:48px;
+			letter-spacing: 24px
+			/*letter-spacing: 0.5em;*/
+		}
+		.r-maj{
+			width:620px;
+			max-width:620px;
+			height:auto;
+			float:left;
+			padding:40px 90px 40px 90px;
+		}
+		.r-maj-first{
+			padding:120px 90px 40px 90px;
+		}
+		.l-maj{
+			width:1402px;
+			height:auto;
+			float:left;
+			padding:40px 90px 40px 120px;
+		}
+		.l-maj-first{
+			padding:120px 90px 40px 120px;
+		}
+		.r-maj ul li{
+			position: relative;
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-size: 42px;
+			width:666px;
+			max-width:666px;
+			height:auto;
+			float:left;
+			margin:0 0px 5px 0px;
+			line-height: 58.8px;
+			/*line-height: 1.4em;*/
+			white-space: normal;
+		}
+		.maj-icon{
+			width:64px;
+			height:64px;
+			float:left;
+			left: 0px;
+			position:absolute;
+		}
+		.maj-icon img{
+			width:64px;
+			height:64px;
+		}
+		.r-maj ul li p{
+			width:auto;
+			height:auto;
+			min-height:72px;
+			line-height: 64.26px;
+			/*line-height: 1.53em;*/
+			float: left;
+			padding-left:90px;
+		}
+		.maj-title{
+			font-family: "bebas_neuebold", Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:54px;
+			width:100%;
+			height:auto;
+			float:left;
+			position:relative;
+			letter-spacing: 6.75px;
+			/*letter-spacing: 0.125em;*/
+			margin-bottom:30px;
+			padding-bottom:30px;
+		}
+
+		.maj-sub-title{
+			font-family: "open_sansbold", Helvetica, sans-serif;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:15px;
+			position:relative;
+			letter-spacing: 4.2px;
+			/*letter-spacing: 0.1em;*/
+		}
+
+		.maj-altsub-title{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-weight: normal;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:20px;
+			position:relative;
+			font-style: italic;
+		}
+
+		.maj-para{
+			font-family: "open_sansregular", Helvetica, sans-serif;
+			font-size:42px;
+			width:100%;
+			height:auto;
+			float:left;
+			margin-bottom:40px;
+			position:relative;
+			line-height: 52.5px;
+			/*line-height: 1.25em;*/
+		}
+		.maj-para ul{
+			list-style-type:disc;
+			list-style-position:inside;
+			padding-left: 57.75px;
+			/*padding-left: 1.375em;*/
+			text-indent: -57.75px;
+			/*text-indent: -1.375em;*/
+		}
+		.maj-para ul li{
+			padding-left: 60px;
+		}
+
 	</style>
 </head>
 
@@ -288,261 +571,432 @@
 					<h4>Administrtive Assistant</h4>
 				</div>
 			</div>
-			
-			<div class="grid-2-3 maj-1-3-color">
-				<div class="grid-content txt-left">
-					<div class="l-maj l-maj-first">
-						<div class="maj-title">
-							Resume Objective
-						</div>
+			<div class="grid-2-3-wrapper">
+				<div class="grid-2-3 maj-1-3-color">
+					<div class="grid-content txt-left">
+						<div class="l-maj l-maj-first">
+							<div class="maj-title">
+								Resume Objective
+							</div>
 
-						<div class="maj-para">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae pellentesque dui. Cras sagittis pretium enim. Vivamus ut justo tempor, sodales nisl ac, varius odio. Ut cursus placerat diam, eget porttitor eros vestibulum suscipit. Curabitur laoreet posuere vestibulum. Sed porttitor massa pharetra malesuada ullammajper. Integer vestibulum est vitae maximus pretium. Etiam in lacus facilisis neque dictum pretium a et neque. Donec eleifend ante id consequat bibendum. Praesent dapibus feugiat justo nec interdum. Donec eu egestas ex, sed tristique sem.</p>
+							<div class="maj-para">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae pellentesque dui. Cras sagittis pretium enim. Vivamus ut justo tempor, sodales nisl ac, varius odio. Ut cursus placerat diam, eget porttitor eros vestibulum suscipit. Curabitur laoreet posuere vestibulum. Sed porttitor massa pharetra malesuada ullammajper. Integer vestibulum est vitae maximus pretium. Etiam in lacus facilisis neque dictum pretium a et neque. Donec eleifend ante id consequat bibendum. Praesent dapibus feugiat justo nec interdum. Donec eu egestas ex, sed tristique sem.</p>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="grid-content">
-					<div class="l-maj">
-						<div class="maj-title">
-							Experience
-						</div>
-						<div class="maj-sub-title">
-							Administrative Assistant
-						</div>
-						<div class="maj-altsub-title ">
-							Redford & Sons, Boston, MA  <span>United States</span> /  <span>September 2016</span> - <span>Present</span>
-						</div>
-						<div class="maj-para">
-							<ul>
-								<li>Schedule and coordinate meetings, appointments, and travel arrangements for supervisors and managers</li>
-								<li>Trained 2 administrative assistants during a period of company expansion to ensure attention to detail and adherence to company policy</li>
-								<li>Developed new filing and organizational practices, saving the company $3,000 per year in contracted labor expenses</li>
-								<li>Maintain utmost discretion when dealing with sensitive topics</li>
-							</ul>
-						</div>
-						<div class="maj-sub-title">
-							Secratary
-						</div>
-						<div class="maj-altsub-title ">
-							Bright Spot LTD, Boston, MA  <span>United States</span> /  <span>June 2013<span> – <span>August 2016</span>
-						</div>
-						<div class="maj-para">
-							<ul>
-								<li>Schedule and coordinate meetings, appointments, and travel arrangements for supervisors and managers</li>
-								<li>Trained 2 administrative assistants during a period of company expansion to ensure attention to detail and adherence to company policy</li>
-								<li>Developed new filing and organizational practices, saving the company $3,000 per year in contracted labor expenses</li>
-								<li>Maintain utmost discretion when dealing with sensitive topics</li>
-							</ul>
-						</div>
-						<div class="maj-sub-title">
-							University Chef
-						</div>
-						<div class="maj-altsub-title ">
-							Bright Spot LTD, Boston, MA  <span>United States</span> /  <span>June 2013<span> – <span>August 2016</span>
-						</div>
-						<div class="maj-para">
-							<ul>
-								<li>Schedule and coordinate meetings, appointments, and travel arrangements for supervisors and managers</li>
-								<li>Trained 2 administrative assistants during a period of company expansion to ensure attention to detail and adherence to company policy</li>
-								<li>Developed new filing and organizational practices, saving the company $3,000 per year in contracted labor expenses</li>
-								<li>Maintain utmost discretion when dealing with sensitive topics</li>
-							</ul>
+					<div class="grid-content">
+						<div class="l-maj">
+							<div class="maj-title">
+								Experience
+							</div>
+							<div class="maj-sub-title">
+								Administrative Assistant
+							</div>
+							<div class="maj-altsub-title ">
+								Redford & Sons, Boston, MA  <span>United States</span> /  <span>September 2016</span> - <span>Present</span>
+							</div>
+							<div class="maj-para">
+								<ul>
+									<li>Schedule and coordinate meetings, appointments, and travel arrangements for supervisors and managers</li>
+									<li>Trained 2 administrative assistants during a period of company expansion to ensure attention to detail and adherence to company policy</li>
+									<li>Developed new filing and organizational practices, saving the company $3,000 per year in contracted labor expenses</li>
+									<li>Maintain utmost discretion when dealing with sensitive topics</li>
+								</ul>
+							</div>
+							<div class="maj-sub-title">
+								Secratary
+							</div>
+							<div class="maj-altsub-title ">
+								Bright Spot LTD, Boston, MA  <span>United States</span> /  <span>June 2013<span> – <span>August 2016</span>
+							</div>
+							<div class="maj-para">
+								<ul>
+									<li>Schedule and coordinate meetings, appointments, and travel arrangements for supervisors and managers</li>
+									<li>Trained 2 administrative assistants during a period of company expansion to ensure attention to detail and adherence to company policy</li>
+									<li>Developed new filing and organizational practices, saving the company $3,000 per year in contracted labor expenses</li>
+									<li>Maintain utmost discretion when dealing with sensitive topics</li>
+								</ul>
+							</div>
+							<div class="maj-sub-title">
+								University Chef
+							</div>
+							<div class="maj-altsub-title ">
+								Bright Spot LTD, Boston, MA  <span>United States</span> /  <span>June 2013<span> – <span>August 2016</span>
+							</div>
+							<div class="maj-para">
+								<ul>
+									<li>Schedule and coordinate meetings, appointments, and travel arrangements for supervisors and managers</li>
+									<li>Trained 2 administrative assistants during a period of company expansion to ensure attention to detail and adherence to company policy</li>
+									<li>Developed new filing and organizational practices, saving the company $3,000 per year in contracted labor expenses</li>
+									<li>Maintain utmost discretion when dealing with sensitive topics</li>
+								</ul>
 
+							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="grid-content">
-					<div class="l-maj">
-						<div class="maj-title">
-							References
-							<div class="maj-title-element"></div>
+					
+					<div class="grid-content">
+						<div class="l-maj">
+							<div class="maj-title">
+								References
+								<div class="maj-title-element"></div>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br> <span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
 						</div>
-						<div class="maj-sub-title">
-							<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+					</div>
+					<div class="grid-content">
+						<div class="l-maj">
+							<div class="maj-title">
+								References
+								<div class="maj-title-element"></div>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br> <span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
 						</div>
-						<div class="maj-para ">
-							<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+					</div>
+					<div class="grid-content">
+						<div class="l-maj">
+							<div class="maj-title">
+								References
+								<div class="maj-title-element"></div>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br> <span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
 						</div>
-						<div class="maj-sub-title">
-							<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+					</div>
+					<div class="grid-content">
+						<div class="l-maj">
+							<div class="maj-title">
+								References
+								<div class="maj-title-element"></div>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br> <span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
 						</div>
-						<div class="maj-para ">
-							<span>843-813-0355M</span> <br> <span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+					</div><div class="grid-content">
+						<div class="l-maj">
+							<div class="maj-title">
+								References
+								<div class="maj-title-element"></div>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br> <span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
 						</div>
-						<div class="maj-sub-title">
-							<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
-						</div>
-						<div class="maj-para ">
-							<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+					</div><div class="grid-content">
+						<div class="l-maj">
+							<div class="maj-title">
+								References
+								<div class="maj-title-element"></div>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br> <span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>MICHAEL ROSENBAUM</span>, <span>Direct of Marketing</span>, <span>Taroko</span>
+							</div>
+							<div class="maj-para ">
+								<span>843-813-0355M</span> <br><span>Michael.Rosenbaum@gmail.com</span> <br> <span>Former Manager</span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="grid-1-3">
-				<div class="grid-content">
-					<div class="r-maj r-maj-first">
-						<ul>
-							<li>
-								<div class="maj-icon">
-									<img src="assets/svg/maj-icon-mail.svg">
-								</div>
-								<p>Sriniparthanomanon@gmail.com</p>
-							</li>
-							<li>
-								<div class="maj-icon">
-									<img src="assets/svg/maj-icon-phon.svg">
-								</div>
-								<p>+001 895 555 555</p>
-							</li>
-							<li>
-								<div class="maj-icon">
-									<img src="assets/svg/maj-icon-loca.svg">
-								</div>
-								<p>
-									<span>4397 Aaron Smith Drive, </span>
-									<span>Harrisburg, </span>
-									<span>PA 17101</span>
-									<span>United States</span>
-								</p>
-							</li>
-							<li>
-								<div class="maj-icon">
-									<img src="assets/svg/maj-icon-in.svg">
-								</div>
-								<p>Linkedin.com/in/yourproﬁle</p>
-							</li>
-						</ul>
+			<div class="grid-1-3-wrapper">
+				<div class="grid-1-3">
+					<div class="grid-content">
+						<div class="r-maj r-maj-first">
+							<ul>
+								<li>
+									<div class="maj-icon">
+										<img src="assets/svg/maj-icon-mail.svg">
+									</div>
+									<p>Sriniparthanomanon@gmail.com</p>
+								</li>
+								<li>
+									<div class="maj-icon">
+										<img src="assets/svg/maj-icon-phon.svg">
+									</div>
+									<p>+001 895 555 555</p>
+								</li>
+								<li>
+									<div class="maj-icon">
+										<img src="assets/svg/maj-icon-loca.svg">
+									</div>
+									<p>
+										<span>4397 Aaron Smith Drive, </span>
+										<span>Harrisburg, </span>
+										<span>PA 17101</span>
+										<span>United States</span>
+									</p>
+								</li>
+								<li>
+									<div class="maj-icon">
+										<img src="assets/svg/maj-icon-in.svg">
+									</div>
+									<p>Linkedin.com/in/yourproﬁle</p>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
 
-				<div class="grid-content">
-					<div class="r-maj">
-						<div class="maj-title">
-							Skills
+					<div class="grid-content">
+						<div class="r-maj">
+							<div class="maj-title">
+								Skills
+							</div>
+							<ul>
+								<li>Problem Solving Problem Solving Problem Solving </li>
+								<li>Collaboration</li>
+								<li>Adaptability</li>
+								<li>Critical Thinking</li>
+								<li>Strong Work Ethic</li>
+								<li>Leadership</li>
+								<li>Time Management</li>
+								<li>Leadership</li>
+								<li>Handling Pressure</li>
+								<li>Problem Solving</li>
+								<li>Collaboration</li>
+							</ul>
 						</div>
-						<ul>
-							<li>Problem Solving</li>
-							<li>Collaboration</li>
-							<li>Adaptability</li>
-							<li>Critical Thinking</li>
-							<li>Strong Work Ethic</li>
-							<li>Leadership</li>
-							<li>Time Management</li>
-							<li>Leadership</li>
-							<li>Handling Pressure</li>
-							<li>Problem Solving</li>
-							<li>Collaboration</li>
-						</ul>
 					</div>
-				</div>
 
-				<div class="grid-content">
-					<div class="r-maj">
-						<div class="maj-title">
-							Education
-						</div>
-						<div class="maj-sub-title">
-							<span>Degree Name</span> / <span>Major</span>
-						</div>
-						<div class="maj-sub-title">
-							<span>GPA:</span> <span>3.5</span>
-						</div>
-						<div class="maj-altsub-title">
-							University of the arts london, Central Saint Martins.
-						</div>
-						<div class="maj-altsub-title bold">
-							<span>Relevant Coursework</span>
-						</div>
-						<div class="maj-para">
+					<div class="grid-content">
+						<div class="r-maj">
+							<div class="maj-title">
+								Skills
+							</div>
 							<ul>
-								<li class="">Marketing Analytics</li>
-								<li class="">Marketing Management</li>
-								<li class="">Survey Research</li>
-								<li class="">Strategic Internet Marketing</li>
-								<li class=""> Integrated Marketing Communications</li>
-							</ul>
-						</div>
-						<div class="maj-altsub-title bold">
-							<span>Awards & Honors</span>
-						</div>
-						<div class="maj-para">
-							<ul>
-								<li class="">Dean's List</li>
-								<li class="">Summa cum laude</li>
+								<li>Problem Solving</li>
+								<li>Collaboration</li>
+								<li>Adaptability</li>
+								<li>Critical Thinking</li>
+								<li>Strong Work Ethic</li>
+								<li>Leadership</li>
+								<li>Time Management</li>
+								<li>Leadership</li>
+								<li>Handling Pressure</li>
+								<li>Problem Solving</li>
+								<li>Collaboration</li>
 							</ul>
 						</div>
 					</div>
-					<div class="r-maj">
-						<div class="maj-sub-title">
-							<span>Degree Name</span> / <span>Major</span>
-						</div>
-						<div class="maj-sub-title">
-							<span>GPA:</span> <span>3.5</span>
-						</div>
-						<div class="maj-altsub-title">
-							University of the arts london, Central Saint Martins.
-						</div>
-						<div class="maj-altsub-title bold">
-							<span>Relevant Coursework</span>
-						</div>
-						<div class="maj-para">
-							<ul>
-								<li class="">Marketing Analytics</li>
-								<li class="">Marketing Management</li>
-								<li class="">Survey Research</li>
-								<li class="">Strategic Internet Marketing</li>
-								<li class=""> Integrated Marketing Communications</li>
-							</ul>
-						</div>
-						<div class="maj-altsub-title bold">
-							<span>Awards & Honors</span>
-						</div>
-						<div class="maj-para">
-							<ul>
-								<li class="">Dean's List</li>
-								<li class="">Summa cum laude</li>
-							</ul>
-						</div>
-					</div>
-				</div>
 
-				<div class="grid-content">
-					<div class="r-maj">
-						<div class="maj-title">
-							Lisenses and Certifications
-							<div class="maj-title-element"></div>
+					<div class="grid-content">
+						<div class="r-maj">
+							<div class="maj-title">
+								Skills
+							</div>
+							<ul>
+								<li>Problem Solving</li>
+								<li>Collaboration</li>
+								<li>Adaptability</li>
+								<li>Critical Thinking</li>
+								<li>Strong Work Ethic</li>
+								<li>Leadership</li>
+								<li>Time Management</li>
+								<li>Leadership</li>
+								<li>Handling Pressure</li>
+								<li>Problem Solving</li>
+								<li>Collaboration</li>
+							</ul>
 						</div>
-						<div class="maj-education">
+					</div>
+
+					<div class="grid-content">
+						<div class="r-maj">
+							<div class="maj-title">
+								Education
+							</div>
 							<div class="maj-sub-title">
-									Lisenses Recieved
-								</div>
+								<span>Degree Name</span> / <span>Major</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>GPA:</span> <span>3.5</span>
+							</div>
 							<div class="maj-altsub-title">
-								Lisenses Line 1
+								University of the arts london, Central Saint Martins.
+							</div>
+							<div class="maj-altsub-title bold">
+								<span>Relevant Coursework</span>
 							</div>
 							<div class="maj-para">
-								Lisenses Line 2 and this is what occurs when 
+								<ul>
+									<li class="">Marketing Analytics</li>
+									<li class="">Marketing Management</li>
+									<li class="">Survey Research</li>
+									<li class="">Strategic Internet Marketing</li>
+									<li class=""> Integrated Marketing Communications</li>
+								</ul>
 							</div>
-						</div>
-						<div class="maj-education">
-							<div class="maj-sub-title">
-									Lisenses Recieved
-								</div>
-							<div class="maj-altsub-title">
-								Lisenses Line 1
+							<div class="maj-altsub-title bold">
+								<span>Awards & Honors</span>
 							</div>
 							<div class="maj-para">
-								Lisenses Line 2 and this is what occurs when the texts is longer
+								<ul>
+									<li class="">Dean's List</li>
+									<li class="">Summa cum laude</li>
+								</ul>
+							</div>
+						</div>
+						<div class="r-maj">
+							<div class="maj-sub-title">
+								<span>Degree Name</span> / <span>Major</span>
+							</div>
+							<div class="maj-sub-title">
+								<span>GPA:</span> <span>3.5</span>
+							</div>
+							<div class="maj-altsub-title">
+								University of the arts london, Central Saint Martins.
+							</div>
+							<div class="maj-altsub-title bold">
+								<span>Relevant Coursework</span>
+							</div>
+							<div class="maj-para">
+								<ul>
+									<li class="">Marketing Analytics</li>
+									<li class="">Marketing Management</li>
+									<li class="">Survey Research</li>
+									<li class="">Strategic Internet Marketing</li>
+									<li class=""> Integrated Marketing Communications</li>
+								</ul>
+							</div>
+							<div class="maj-altsub-title bold">
+								<span>Awards & Honors</span>
+							</div>
+							<div class="maj-para">
+								<ul>
+									<li class="">Dean's List</li>
+									<li class="">Summa cum laude</li>
+								</ul>
 							</div>
 						</div>
 					</div>
-				</div>
 
+					<div class="grid-content">
+						<div class="r-maj">
+							<div class="maj-title">
+								Lisenses and Certifications
+								<div class="maj-title-element"></div>
+							</div>
+							<div class="maj-education">
+								<div class="maj-sub-title">
+										Lisenses Recieved
+									</div>
+								<div class="maj-altsub-title">
+									Lisenses Line 1
+								</div>
+								<div class="maj-para">
+									Lisenses Line 2 and this is what occurs when 
+								</div>
+							</div>
+							<div class="maj-education">
+								<div class="maj-sub-title">
+										Lisenses Recieved
+									</div>
+								<div class="maj-altsub-title">
+									Lisenses Line 1
+								</div>
+								<div class="maj-para">
+									Lisenses Line 2 and this is what occurs when the texts is longer
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
-
-
 		</div>
 	</div>
 </body>
